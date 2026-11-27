@@ -1,0 +1,16 @@
+pub mod completions;
+pub mod config_cmd;
+pub mod doctor;
+pub mod files;
+pub mod info;
+pub mod list;
+pub mod load;
+pub mod manage;
+pub mod pin;
+pub mod reference;
+pub mod run;
+pub mod search;
+pub mod skill_cmd;
+pub mod stats;
+pub mod validate;
+pub mod which;

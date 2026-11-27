@@ -1,0 +1,34 @@
+name: release
+on:
+  push:
+    tags: ["v*"]
+permissions:
+  contents: write
+jobs:
+  build:
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-22.04
+            arch: x86_64
+          - os: ubuntu-22.04-arm
+            arch: aarch64
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - run: cargo test --locked
+      - run: cargo build --release --locked
+      - name: Package
+        run: |
+          name=skills-${GITHUB_REF_NAME}-linux-${{ matrix.arch }}
+          mkdir "$name"
+          cp target/release/skills LICENSE README.md "$name"/
+          cp -r packaging "$name"/
+          tar czf "$name.tar.gz" "$name"
+          sha256sum "$name.tar.gz" > "$name.tar.gz.sha256"
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            skills-*.tar.gz
+            skills-*.tar.gz.sha256

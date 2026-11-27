@@ -1,0 +1,27 @@
+[package]
+name = "skills-cli"
+version = "0.2.0"
+edition = "2024"
+description = "Fast CLI that keeps a library of agent skills on disk and loads only what the task needs, on demand."
+license = "MIT"
+authors = ["CLOUDWERX LAB <mail@cloudwerxlab.com>"]
+repository = "https://github.com/CLOUDWERX-DEV/skills-cli"
+homepage = "https://cloudwerxlab.com"
+readme = "README.md"
+keywords = ["agent-skills", "cli", "context", "mcp", "ai-agents"]
+categories = ["command-line-utilities", "development-tools"]
+rust-version = "1.85"
+
+[[bin]]
+name = "skills"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive", "env"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["preserve_order"] }
+toml = "0.8"
+walkdir = "2"
+regex = "1"
+libc = "0.2.191"

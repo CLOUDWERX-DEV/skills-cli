@@ -1,0 +1,35 @@
+# Maintainer: CLOUDWERX LAB <mail@cloudwerxlab.com>
+pkgname=skills-cli
+pkgver=0.2.0
+pkgrel=1
+pkgdesc='Fast CLI that keeps a library of agent skills on disk and loads only what the task needs'
+arch=('x86_64' 'aarch64')
+url='https://github.com/CLOUDWERX-DEV/skills-cli'
+license=('MIT')
+depends=('gcc-libs' 'glibc')
+optdepends=('git: skills install from a git repository')
+makedepends=('cargo')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
+sha256sums=('SKIP')
+
+prepare() {
+  cd "$pkgname-$pkgver"
+  cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
+}
+
+build() {
+  cd "$pkgname-$pkgver"
+  cargo build --frozen --release
+}
+
+check() {
+  cd "$pkgname-$pkgver"
+  cargo test --frozen
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  install -Dm755 target/release/skills "$pkgdir/usr/bin/skills"
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 skills/skills-cli/SKILL.md "$pkgdir/usr/share/skills-cli/skills/skills-cli/SKILL.md"
+}
