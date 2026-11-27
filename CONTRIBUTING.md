@@ -49,7 +49,6 @@ The tests build their own throwaway library and home folder. They never read or 
 | `src/output.rs` | Color handling, token estimates, wrapping, truncation. |
 | `src/commands/*.rs` | One file per command. `manage.rs` is `new`, `install` and `remove`. |
 | `skills/skills-cli/SKILL.md` | The guide built into the binary (`skills skill`). |
-| `examples/make_logo.rs` | The logo generator. |
 
 Two ideas run through it:
 

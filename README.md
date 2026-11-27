@@ -160,7 +160,7 @@ cargo test
 cargo clippy --all-targets
 ```
 
-The tests build a throwaway library and home folder, so they never touch your real skills. [CONTRIBUTING.md](CONTRIBUTING.md) has the rest. The logo is drawn by `cargo run --example make_logo`.
+The tests build a throwaway library and home folder, so they never touch your real skills. [CONTRIBUTING.md](CONTRIBUTING.md) has the rest.
 
 ## Support
 

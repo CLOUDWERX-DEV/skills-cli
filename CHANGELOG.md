@@ -2,6 +2,14 @@
 
 All notable changes to `skills` are in this file. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Changed
+
+- **A new logo**: an SD card with four green contacts and the word "skills", in the icon and the banner (`assets/`). The vector mark is `assets/src/logo.svg`, traced from the artwork in `assets/src/logo-master.png`.
+- The pixel-art logo generator (`examples/make_logo.rs`) is gone; the icon and banner are plain files in `assets/`.
+
+
 ## [0.2.0] - 2026-11-26
 
 First public release.
@@ -23,7 +31,7 @@ First public release.
 - `skills completions` for fish, bash and zsh, with dynamic skill names and `--install`.
 - `skills skill` prints a guide built into the binary, so an agent can learn the tool with one command. The same guide is a skill in `skills/skills-cli`.
 - Colors only on a terminal, a clean exit when piped into a pager (SIGPIPE), and no ANSI in piped output.
-- A pixel-art mascot and banner (`cargo run --example make_logo`), CI, release binaries for x86_64 and aarch64, and a PKGBUILD.
+- A pixel-art mascot and banner, CI, release binaries for x86_64 and aarch64, and a PKGBUILD.
 - Tests: unit tests plus end-to-end tests that run the real binary against a throwaway library and home folder, including path traversal checks.
 
 ### Changed
