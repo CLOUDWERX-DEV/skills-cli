@@ -7,6 +7,6 @@
   <text x="372" y="156" font-family="'JetBrains Mono', 'JetBrainsMono Nerd Font Mono', 'Fira Code', Consolas, monospace" font-size="96" font-weight="800" letter-spacing="-4">
     <tspan fill="#131d24">skill</tspan><tspan fill="#12b878">s</tspan>
   </text>
-  <text x="376" y="208" font-family="Inter, 'Inter Variable', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="24" fill="#566074">Every skill on disk. Only what you need in context.</text>
-  <rect x="376" y="232" width="150" height="3" rx="1.5" fill="#ffc857"/>
+  <text x="376" y="208" textLength="566" lengthAdjust="spacing" font-family="Inter, 'Inter Variable', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="24" fill="#566074">Every skill on disk. Only what you need in context.</text>
+  <rect x="376" y="232" width="566" height="3" rx="1.5" fill="#ffc857"/>
 </svg>
